@@ -1,0 +1,21 @@
+create table projects_past
+(
+	project_ID int not null auto_increment,
+    partner_ID int not null,
+    project_name varchar(100) not null,
+    in_planning bool,
+    date_start datetime,
+    date_end datetime,
+    date_submission date,
+    date_decision date,
+    department varchar(100),
+    third_party_support varchar(100),
+    funding int,
+    responsible_for_funding varchar(100),
+    editor varchar(100),
+    scientific_output varchar(100),
+    speaker varchar(100),
+    category varchar(100),
+    PRIMARY KEY (project_ID),
+    CONSTRAINT partners FOREIGN KEY	(partner_ID) references user_account(user_ID)
+);
